@@ -20,11 +20,11 @@
       "generator": "secret"
     },
     "SLACK_ID": {
-      "description": "The application key for slack. Get one from https://api.slack.com/applications/new",
+      "description": "The application key for slack. Get one from https://api.slack.com/applications/new. See the readme on how to fill the redirect_uri",
       "required": true
     },
     "SLACK_SECRET": {
-      "description": "The application secret for slack. Set the redirect_uri in Slack to https://APP-NAME.herokuapp.com/auth/slack/callback, where APP-NAME is what you've filled above",
+      "description": "The application secret for slack.",
       "required": true
     },
     "RAILS_ENV": "production",
