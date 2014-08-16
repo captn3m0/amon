@@ -32,5 +32,8 @@ In addition, `DATABASE_URL` (postgres) is used in production. In development, yo
 
 While setting up your [application at slack](https://api.slack.com/applications/new), the redirect URI must be `https://example.com/auth/slack/callback`. You can set multiple redirect uris for develpment and production, for eg.
 
+##DISCLAIMER
+amon is a tool for pen-testing. Don't use it to attack targets without their knowledge. amon's goal is to make you smarter, not to help you to get into trouble, because we won’t be there to get you out. **If you do things illegally, you can be caught and put in jail!**.
+
 #Licence
 Licenced under the [MIT Licence](http://nemo.mit-license.org/)
