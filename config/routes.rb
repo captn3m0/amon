@@ -5,7 +5,9 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
   root 'application#index'
   get '/auth/:provider/callback', to: 'sessions#create'
-  get '/slack/:id', to: 'slack#show'
+  get '/slack/:id', to: 'slack#index'
+  get '/slack/:id/channel/:channel', to: 'slack#channel', as: 'slack_channel'
+  get '/slack/:id/group/:group', to: 'slack#group', as: 'slack_group'
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

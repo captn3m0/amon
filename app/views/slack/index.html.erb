@@ -1,0 +1,22 @@
+<h1>Slack - Amon</h1>
+<h2>Token Information</h2>
+<pre>
+<% info = JSON.parse(@token.info) %>
+<% info.each do |key|  %>
+  <%=key[0]%>: <%=key[1]%>
+<% end %>
+</pre>
+
+<h2>Channels List</h2>
+<ul>
+<% @channels.each do |channel| %>
+  <li><%=link_to channel['name'], slack_channel_path(@token.id, channel['id'])%></li>
+<% end %>
+</ul>
+
+<h2>Groups List</h2>
+<ul>
+<% @groups.each do |group| %>
+  <li><%=link_to group['name'], slack_group_path(@token.id, group['id'])%></li>
+<% end %>
+</ul>
