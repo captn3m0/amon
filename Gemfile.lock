@@ -1,3 +1,12 @@
+GIT
+  remote: https://github.com/captn3m0/slack-ruby-gem.git
+  revision: 937ae585d76977c789038866c08315dd7f0e52fa
+  specs:
+    slack-api (0.0.2)
+      faraday (>= 0.7, <= 0.9)
+      faraday_middleware (~> 0.8)
+      multi_json (~> 1.0, >= 1.0.3)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -45,6 +54,8 @@ GEM
     execjs (2.2.1)
     faraday (0.9.0)
       multipart-post (>= 1.2, < 3)
+    faraday_middleware (0.9.1)
+      faraday (>= 0.7.4, < 0.10)
     hashie (3.2.0)
     hike (1.2.3)
     i18n (0.6.11)
@@ -137,6 +148,7 @@ DEPENDENCIES
   omniauth-slack
   rails (= 4.1.4)
   sass-rails (~> 4.0.3)
+  slack-api!
   spring
   sqlite3
   uglifier (>= 1.3.0)

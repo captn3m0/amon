@@ -22,6 +22,7 @@ gem 'spring',        group: :development
 gem 'dotenv-rails', :groups => [:development, :test]
 gem 'omniauth'
 gem 'omniauth-slack'
+gem 'slack-api', :git => 'https://github.com/captn3m0/slack-ruby-gem.git'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
