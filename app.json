@@ -15,16 +15,16 @@
     "postdeploy": "bundle exec rake db:migrate"
   },
   "env": {
-    "SECRET_TOKEN": {
+    "SECRET_KEY_BASE": {
       "description": "A secret key for verifying the integrity of signed cookies.",
       "generator": "secret"
     },
     "SLACK_ID": {
-      "description": "The application key for slack",
+      "description": "The application key for slack. Get one from https://api.slack.com/applications/new",
       "required": true
     },
     "SLACK_SECRET": {
-      "description": "The application secret for slack",
+      "description": "The application secret for slack. Set the redirect_uri in Slack to https://APP-NAME.herokuapp.com/auth/slack/callback, where APP-NAME is what you've filled above",
       "required": true
     }
   },

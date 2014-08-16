@@ -30,5 +30,7 @@ amon uses sqlite in development and pg in production. The following environment 
 
 In addition, `DATABASE_URL` (postgres) is used in production. In development, you can use a `.env` file in project root, and it will be used automatically.
 
+While setting up your [application at slack](https://api.slack.com/applications/new), the redirect URI must be `https://example.com/auth/slack/callback`. You can set multiple redirect uris for develpment and production, for eg.
+
 #Licence
 Licenced under the [MIT Licence](http://nemo.mit-license.org/)
