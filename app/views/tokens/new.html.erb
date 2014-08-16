@@ -1,0 +1,12 @@
+<form action="<%= token_create_path %>" method="POST">
+  <p>OAuth Token: <input name="oauth-token" placeholder="token" size="100" maxlength="255"><br></p>
+  <p>Provider: <input name="provider" readonly value="slack"><br></p>
+  <p>Info Hash: <textarea name="info" rows="5" cols="30" placeholder="Enter valid JSON schema here for info">
+{
+  "user": "n3m0",
+  "team": "sdslabs"
+}
+  </textarea></p>
+  <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>" />
+  <input type="submit">
+</form>

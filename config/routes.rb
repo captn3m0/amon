@@ -10,6 +10,8 @@ Rails.application.routes.draw do
   get '/slack/:id/group/:group(/:name)', to: 'slack#group', as: 'slack_group'
   get '/slack/:id/users(/:format)', to: 'slack#users', as: 'slack_users'
   get '/slack/:id/search', to: 'slack#search', as: 'slack_search'
+  get '/tokens/create', to: 'tokens#new', as: 'token_new'
+  post '/tokens/create', to: 'tokens#create', as: 'token_create'
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
