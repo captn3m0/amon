@@ -10,11 +10,23 @@ class SlackController < ApplicationController
   end
 
   def channel
+    @history = Slack.channels_history({
+      :channel=>params['channel'],
+      :count=>1000
+    })['messages']
+    @name = params['name']
+    render 'history'
   end
 
   def group
+    @history = Slack.groups_history({
+      :channel=>params['group'],
+      :count=>1000
+    })['messages']
+    @name = params['name']
+    render 'history'
   end
-  
+
   private
 
   def set_token

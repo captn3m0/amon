@@ -10,13 +10,13 @@
 <h2>Channels List</h2>
 <ul>
 <% @channels.each do |channel| %>
-  <li><%=link_to channel['name'], slack_channel_path(@token.id, channel['id'])%></li>
+  <li><%=link_to channel['name'], slack_channel_path(@token.id, channel['id'], channel['name'])%></li>
 <% end %>
 </ul>
 
 <h2>Groups List</h2>
 <ul>
 <% @groups.each do |group| %>
-  <li><%=link_to group['name'], slack_group_path(@token.id, group['id'])%></li>
+  <li><%=link_to group['name'], slack_group_path(@token.id, group['id'], group['name'])%></li>
 <% end %>
 </ul>
