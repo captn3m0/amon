@@ -2,5 +2,6 @@ History for <%=@name%> (<%= link_to "Slack Home", slack_home_path(@token.id) %>)
 
 <ul>
 <% @history.each do |message| %>
-<li><span class="user"><%= message['user'] %></span>: <%= message['text'] %></li>
+<% message['ts'] = message['ts'].to_f.abs %>
+<li><span class="user"><%= message['user'] %></span>: <%= message['text'] %> | <%= time_ago_in_words(Time.at message['ts']) %> ago</li>
 <% end %>
