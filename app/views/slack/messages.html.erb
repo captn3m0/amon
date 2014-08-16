@@ -3,7 +3,16 @@ Messages for <%=@name%> (<%= link_to "Slack Home", slack_home_path(@token.id), {
 <ul>
 <% @messages.each do |message| %>
 <% message['ts'] = message['ts'].to_f.abs %>
-<li><span title="<%="#{message['type']}/#{message['channel']['name']}"%>" class="user"><%= message['username'] || message['user'] %></span>: <span title="<%= time_ago_in_words(Time.at message['ts']) %> ago" class="message"><%= message['text'] %></span></li>
+<li>
+  <% channel = message['channel']['name'] if message['channel'] %>
+  <span title="<%="#{message['type'].presence}/#{channel}"%>" class="user">
+    <%= message['username'] || message['user'] %>
+  </span>
+  :
+  <span title="<%= time_ago_in_words(Time.at message['ts']) %> ago" class="message">
+    <%= message['text'] %>
+  </span>
+</li>
 <% end %>
 
 <%=javascript_include_tag "normalize_slack_usernames" %>

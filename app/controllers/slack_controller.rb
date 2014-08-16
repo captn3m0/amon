@@ -15,6 +15,7 @@ class SlackController < ApplicationController
       :count=>1000
     })['messages']
     @name = params['name']
+    #render json: @messages
     render 'messages'
   end
 
@@ -43,7 +44,7 @@ class SlackController < ApplicationController
       :query=>q,
       :count=>1000
     })['messages']['matches']
-    #render json: @messages
+    @name = "searching #{q}"
     render 'messages'
   end
 

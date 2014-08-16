@@ -6,14 +6,20 @@ $(document).ready ->
       users[x.id] = x
     $('.user').each (index, user) ->
       $user = $ user
-      if users[$user.text()]
-        $user.text users[$user.text()].name
+      nick = $user.text().trim()
+      if users[nick]
+        $user.text users[nick].name
     $('.message').each (index, message) ->
       $message = $ message
       $message.text $message.text().replace /<@(U\w*)[\|]?(\w*)?>/i, (match, id, nick)->
         if nick
-          return "@" + nick
+          return "@#{nick}"
         else if users[id]
-          return "@" + users[id].name
+          return "@#{users[id].name}"
         else
-          return "@" + id.slice(1).toLowerCase()
+          return "@#{id.slice(1).toLowerCase()}"
+      $message.text $message.text().replace /<!(\w*)>/, (match, word)->
+        return "@#{word}"
+      $message.html $message.html().replace /&lt;((http|ftp|https):\/\/[\w-]+(\.[\w-]+)+([\w.,@?^=%&amp;:\/~+#-]*[\w@?^=%&amp;\/~+#-]))?[\|]?(.*)?&gt;/, (match) ->
+        return "<a href='#{arguments[1]}'>#{match}</a>"
+      null
