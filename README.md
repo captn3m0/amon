@@ -2,7 +2,7 @@ amon is a hacking tool for maintaining access to accounts using oauth tokens, in
 
 [![Deploy](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy?template=https://github.com/captn3m0/amon)
 
-![Amon](http://images1.cliqueclack.com/tv/files/2012/05/Amon_and_his_Equalists-425x239.png)
+![Amon](https://cdn.rawgit.com/captn3m0/amon/master/app/assets/images/logo.png)
 
 #[Live Demo](https://amon-hack.herokuapp.com/)
 
