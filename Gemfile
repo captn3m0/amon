@@ -20,8 +20,6 @@ gem 'jquery-rails'
 # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
 gem 'spring',        group: :development
 gem 'dotenv-rails', :groups => [:development, :test]
-gem 'pg', :groups => [:production]
-gem 'rails_12factor', group: :production
 gem 'omniauth'
 gem 'omniauth-slack'
 gem 'slack-api', :git => 'https://github.com/captn3m0/slack-ruby-gem.git'
@@ -37,3 +35,8 @@ gem 'slack-api', :git => 'https://github.com/captn3m0/slack-ruby-gem.git'
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
+group :production do
+   gem 'unicorn'
+   gem 'rails_12factor'
+   gem 'pg'
+end
