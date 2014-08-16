@@ -26,7 +26,9 @@
     "SLACK_SECRET": {
       "description": "The application secret for slack. Set the redirect_uri in Slack to https://APP-NAME.herokuapp.com/auth/slack/callback, where APP-NAME is what you've filled above",
       "required": true
-    }
+    },
+    "RAILS_ENV": "production",
+    "RACK_ENV": "production"
   },
   "addons": [
     "heroku-postgresql:hobby-dev"
