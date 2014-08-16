@@ -1,14 +1,9 @@
 class SessionsController < ApplicationController
   def create
-    case auth_hash.provider
-    when 'slack'
-      Token.create({
-        :token=>auth_hash.credentials.token,
-        :provider=>auth_hash.provider,
-        :info=>auth_hash.info.to_json
-      })
-    else
-      rails "Invalid provider"
+    begin
+      Token.create_from_omniauth(auth_hash)
+    rescue ActiveRecord::RecordNotUnique => e
+      redirect_to '/', flash: {notice: "Token already exists"}
     end
   end
 

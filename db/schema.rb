@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140816053702) do
+ActiveRecord::Schema.define(version: 20140816064620) do
 
   create_table "tokens", force: true do |t|
     t.string   "token"
@@ -20,6 +20,8 @@ ActiveRecord::Schema.define(version: 20140816053702) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "tokens", ["token"], name: "index_tokens_on_token", unique: true
 
   create_table "users", force: true do |t|
     t.datetime "created_at"
