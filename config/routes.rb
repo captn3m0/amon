@@ -5,13 +5,17 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
   root 'application#index'
   get '/auth/:provider/callback', to: 'sessions#create'
+
   get '/slack/:id', to: 'slack#index', as: 'slack_home'
   get '/slack/:id/channel/:channel(/:name)', to: 'slack#channel', as: 'slack_channel'
   get '/slack/:id/group/:group(/:name)', to: 'slack#group', as: 'slack_group'
   get '/slack/:id/users(/:format)', to: 'slack#users', as: 'slack_users'
   get '/slack/:id/search', to: 'slack#search', as: 'slack_search'
+
   get '/tokens/create', to: 'tokens#new', as: 'token_new'
   post '/tokens/create', to: 'tokens#create', as: 'token_create'
+
+  get '/google/:id', to: 'google#index', as: 'google_home'
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
