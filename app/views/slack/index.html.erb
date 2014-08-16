@@ -19,3 +19,5 @@
   <li><%=link_to group['name'], slack_group_path(@token.id, group['id'], group['name'])%></li>
 <% end %>
 </ul>
+
+<h2><%= link_to "Users list", slack_users_path(@token.id) %></h2>

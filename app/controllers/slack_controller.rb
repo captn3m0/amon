@@ -30,6 +30,7 @@ class SlackController < ApplicationController
   def users
     @users = Slack.users_list['members']
     if(params['format'] == 'json')
+      expires_in 1.hours
       render json: @users
     else
       render 'users'
