@@ -1,0 +1,34 @@
+{
+  "name": "amon",
+  "description": "amon is a hacking tool for maintaining access to accounts using oauth tokens.",
+  "keywords": [
+    "hack",
+    "amon",
+    "oauth",
+    "slack"
+  ],
+  "website": "https://github.com/captn3m0/amon",
+  "repository": "https://github.com/captn3m0/amon",
+  "logo": "https://i.imgur.com/Gg1EwXA.png",
+  "success_url": "/",
+  "scripts": {
+    "postdeploy": "bundle exec rake db:migrate"
+  },
+  "env": {
+    "SECRET_TOKEN": {
+      "description": "A secret key for verifying the integrity of signed cookies.",
+      "generator": "secret"
+    },
+    "SLACK_ID": {
+      "description": "The application key for slack",
+      "required": true
+    },
+    "SLACK_SECRET": {
+      "description": "The application secret for slack",
+      "required": true
+    }
+  },
+  "addons": [
+    "heroku-postgresql:hobby-dev"
+  ]
+}
