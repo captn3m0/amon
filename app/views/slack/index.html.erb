@@ -1,8 +1,7 @@
 <h1>Slack - Amon</h1>
 <h2>Token Information</h2>
 <pre>
-<% info = JSON.parse(@token.info) %>
-<% info.each do |key|  %>
+<% @token.info.each do |key|  %>
   <%=key[0]%>: <%=key[1]%>
 <% end %>
 </pre>

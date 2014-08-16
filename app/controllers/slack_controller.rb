@@ -27,10 +27,20 @@ class SlackController < ApplicationController
     render 'history'
   end
 
+  def users
+    @users = Slack.users_list['members']
+    if(params['format'] == 'json')
+      render json: @users
+    else
+      render 'users'
+    end
+  end
+
   private
 
   def set_token
     @token = Token.find(params['id'])
+    @token.info = JSON.parse(@token.info)
     Slack.configure do |config|
       config.token = @token.token
     end

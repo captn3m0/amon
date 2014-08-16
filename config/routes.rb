@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   get '/slack/:id', to: 'slack#index', as: 'slack_home'
   get '/slack/:id/channel/:channel(/:name)', to: 'slack#channel', as: 'slack_channel'
   get '/slack/:id/group/:group(/:name)', to: 'slack#group', as: 'slack_group'
+  get '/slack/:id/users(/:format)', to: 'slack#users', as: 'slack_users'
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
