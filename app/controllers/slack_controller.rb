@@ -10,21 +10,21 @@ class SlackController < ApplicationController
   end
 
   def channel
-    @history = Slack.channels_history({
+    @messages = Slack.channels_history({
       :channel=>params['channel'],
       :count=>1000
     })['messages']
     @name = params['name']
-    render 'history'
+    render 'messages'
   end
 
   def group
-    @history = Slack.groups_history({
+    @messages = Slack.groups_history({
       :channel=>params['group'],
       :count=>1000
     })['messages']
     @name = params['name']
-    render 'history'
+    render 'messages'
   end
 
   def users
@@ -35,6 +35,16 @@ class SlackController < ApplicationController
     else
       render 'users'
     end
+  end
+
+  def search
+    q=params['q']
+    @messages = Slack.search_messages({
+      :query=>q,
+      :count=>1000
+    })['messages']['matches']
+    #render json: @messages
+    render 'messages'
   end
 
   private

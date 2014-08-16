@@ -21,3 +21,9 @@
 </ul>
 
 <h2><%= link_to "Users list", slack_users_path(@token.id) %></h2>
+
+<h2>Search</h2>
+<form action="<%= slack_search_path(@token.id) %>">
+  <input type="search" placeholder="query" name="q">
+  <input type="submit">
+</form>

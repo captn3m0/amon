@@ -1,9 +1,0 @@
-History for <%=@name%> (<%= link_to "Slack Home", slack_home_path(@token.id), {:class=>'slack_base_url'} %>)
-
-<ul>
-<% @history.each do |message| %>
-<% message['ts'] = message['ts'].to_f.abs %>
-<li><span class="user"><%= message['user'] %></span>: <span title="<%= time_ago_in_words(Time.at message['ts']) %> ago" class="message"><%= message['text'] %></span></li>
-<% end %>
-
-<%=javascript_include_tag "normalize_slack_usernames" %>
