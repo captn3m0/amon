@@ -1,0 +1,9 @@
+%dl
+  - @messages.each do |message|
+    - if message['payload']['parts'].nil?
+      - text = message['payload']['body']['data']
+    - else
+      - text = message['payload']['parts'][0]['body']['data']
+    %dt= link_to message['snippet'], gmail_message_path(@token.id, message['id'])
+    %dd
+      %p!= simple_format parse_email_body base64_decode text

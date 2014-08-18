@@ -1,8 +1,0 @@
-<dl>
-<% @messages.each do |message| %>
-<dt><%== link_to message['snippet'], gmail_message_path(@token.id, message['id'])%></dt>
-<dd>
-  <p><%=simple_format parse_email_body base64_decode message['payload']['parts'][0]['body']['data']%></p>
-</dd>
-<% end %>
-</dl>

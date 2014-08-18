@@ -1,0 +1,16 @@
+<h1>Google - Amon</h1>
+<h2>Token Information</h2>
+<pre>
+<% @token.get_info.each do |key|  %>
+  <%=key[0]%>: <%=key[1]%>
+<% end %>
+</pre>
+
+<h2>Links</h2>
+<p><%= link_to "GMail", gmail_path(@token.id) %></p>
+
+<h2>Search</h2>
+<form action="<%= gmail_search_path(@token.id) %>">
+  <input type="search" placeholder="query" name="q">
+  <input type="submit">
+</form>
