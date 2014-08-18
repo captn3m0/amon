@@ -1,0 +1,5 @@
+<ol>
+<% @threads.each do |thread| %>
+<li><%=link_to "View this thread", gmail_thread_path(@token.id, thread['id']) %></li>
+<% end %>
+</ol>

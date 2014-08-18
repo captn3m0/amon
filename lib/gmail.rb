@@ -1,10 +1,9 @@
 class Gmail
   include HTTParty
-  base_uri 'https://www.googleapis.com'
+  base_uri ENV['GMAIL_BASE'] || "https://www.googleapis.com"
 
   def initialize(token)
     @options = {
-      query: {key: token, includeSpamTrash: true},
       headers: { "Authorization" => "Bearer #{token}" }
     }
   end
@@ -24,7 +23,17 @@ class Gmail
     self
   end
 
+  def messages
+    @suffix = '/gmail/v1/users/me/messages'
+    self
+  end
+
+  def thread(id)
+    @suffix = '/gmail/v1/users/me/threads/'+id
+    self
+  end
+
   def fetch
-    self.class.get(@suffix, @options)
+    self.class.get(@suffix, @options).parsed_response
   end
 end

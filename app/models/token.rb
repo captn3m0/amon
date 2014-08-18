@@ -23,4 +23,14 @@ class Token < ActiveRecord::Base
     end
 
   end
+
+  def get_info
+    JSON.parse self.info
+  end
+
+  def set_info(key, value)
+    info = get_info
+    info[key] = value
+    self.update_attribute 'info', info.to_json
+  end
 end

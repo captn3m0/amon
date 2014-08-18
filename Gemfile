@@ -17,6 +17,7 @@ group :development do
   gem 'sqlite3'
   gem 'debugger'
   gem 'better_errors'
+  gem 'binding_of_caller'
 end
 
 gem 'omniauth'
@@ -24,6 +25,7 @@ gem 'omniauth-slack'
 gem 'slack-api', :git => 'https://github.com/captn3m0/slack-ruby-gem.git'
 gem 'httparty'
 gem 'omniauth-google-oauth2'
+gem 'email_reply_parser'
 
 group :production do
    gem 'unicorn'

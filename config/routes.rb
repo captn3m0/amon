@@ -16,6 +16,8 @@ Rails.application.routes.draw do
   post '/tokens/create', to: 'tokens#create', as: 'token_create'
 
   get '/google/:id', to: 'google#index', as: 'google_home'
+  get '/google/:id/gmail', to: 'google#gmail', as: 'gmail'
+  get '/google/:id/gmail/thread/:thread_id', to: 'google#gmail_thread', as: 'gmail_thread'
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
