@@ -11,6 +11,7 @@ amon is a hacking tool for maintaining access to accounts using oauth tokens, in
 ##Currently supported applications
 
 - Slack
+- GMail
 
 ##Features (Slack)
 
@@ -22,6 +23,13 @@ amon is a hacking tool for maintaining access to accounts using oauth tokens, in
 - Search across all messages
 - Linkification and conversion of @mentions
 
+##Features (GMail)
+
+- Listing of all threads in Inbox
+- Listing all messages in any thread
+- Viewing all headers + plain text or html version of a message
+- Searching all messages across gmail
+
 #Setup & Development
 amon uses sqlite in development and pg in production. The following environment variables are expected to be present:
 
@@ -30,7 +38,14 @@ amon uses sqlite in development and pg in production. The following environment 
 
 In addition, `DATABASE_URL` (postgres) is used in production. In development, you can use a `.env` file in project root, and it will be used automatically.
 
-While setting up your [application at slack](https://api.slack.com/applications/new), the redirect URI must be `https://example.com/auth/slack/callback`. You can set multiple redirect uris for develpment and production, for eg.
+While setting up your [application at slack](https://api.slack.com/applications/new), the redirect URI must be `https://example.com/auth/slack/callback`. You can set multiple redirect uris for develpment and production.
+
+For setting up your [application at google](https://console.developers.google.com/project?authuser=0), set the following:
+
+- **Enabled APIS**: Contacts API, Drive API, GMail API, Google+ API
+- Setup your application in credentials tab as a web application
+- Copy over CLIEND ID and CLIENT SECRET to the setup screen
+- REDIRECT URI must be `https://example.com/auth/google/callback`
 
 ##DISCLAIMER
 amon is a tool for pen-testing. Don't use it to attack targets without their knowledge. amon's goal is to make you smarter, not to help you to get into trouble, because we won’t be there to get you out. **If you do things illegally, you can be caught and put in jail!**.

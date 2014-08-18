@@ -5,7 +5,9 @@
     "hack",
     "amon",
     "oauth",
-    "slack"
+    "slack",
+    "gmail",
+    "google"
   ],
   "website": "https://github.com/captn3m0/amon",
   "repository": "https://github.com/captn3m0/amon",
@@ -20,11 +22,19 @@
       "generator": "secret"
     },
     "SLACK_ID": {
-      "description": "The application key for slack. Get one from https://api.slack.com/applications/new. See the readme on how to fill the redirect_uri",
+      "description": "The application key for slack. See readme on how to get one.",
       "required": true
     },
     "SLACK_SECRET": {
       "description": "The application secret for slack.",
+      "required": true
+    },
+    "GOOGLE_ID": {
+      "description": "The application id for Google. See readme for more details.",
+      "required": true
+    },
+    "GOOGLE_SECRET": {
+      "description": "The application secret for Google",
       "required": true
     },
     "RAILS_ENV": "production",
