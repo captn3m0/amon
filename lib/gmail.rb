@@ -4,17 +4,19 @@ class Gmail
 
   def initialize(token)
     @options = {
-      headers: { "Authorization" => "Bearer #{token}" }
+      headers: { "Authorization" => "Bearer #{token}" },
+      query: { "key" => token}
     }
   end
 
   def add_param(name, value)
-    @options['query'][name] = value
+    @options[:query][name] = value
   end
 
   def query(q)
-    @suffix = "/threads"
+    @suffix = '/gmail/v1/users/me/messages'
     self.add_param 'q', q
+    puts @options
     self
   end
 

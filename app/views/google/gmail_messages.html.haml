@@ -1,0 +1,3 @@
+%ol
+  - @messages.each do |msg|
+    %li= link_to "View this message", gmail_message_path(@token.id, msg['id'])
