@@ -18,6 +18,7 @@ Rails.application.routes.draw do
   get '/google/:id', to: 'google#index', as: 'google_home'
   get '/google/:id/gmail', to: 'google#gmail', as: 'gmail'
   get '/google/:id/gmail/thread/:thread_id', to: 'google#gmail_thread', as: 'gmail_thread'
+  get '/google/:id/gmail/message/:message_id', to: 'google#gmail_message', as: 'gmail_message'
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

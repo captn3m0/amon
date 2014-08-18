@@ -4,7 +4,7 @@ require 'gmail'
 class GoogleController < ApplicationController
 
   before_action :set_token
-  before_action :set_gmail, only: [:gmail, :gmail_thread]
+  before_action :set_gmail, only: [:gmail, :gmail_thread, :gmail_message]
 
   def index
     render 'index'
@@ -19,6 +19,11 @@ class GoogleController < ApplicationController
     @messages = @gmail.thread(params['thread_id']).fetch['messages']
     #render json: @messages
     render 'gmail_thread'
+  end
+
+  def gmail_message
+    @message = @gmail.message(params['message_id']).fetch
+    render 'gmail_message'
   end
 
   private

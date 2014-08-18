@@ -1,0 +1,26 @@
+%b Thread: 
+= link_to @message['threadId'], gmail_thread_path(@token, @message['threadId'])
+%p
+  %b
+    Snippet: 
+  != @message['snippet']
+
+%h2 Body[Text]
+%p
+  = simple_format parse_email_body base64_decode @message['payload']['parts'][0]['body']['data']
+
+%h2 Body[HTML]
+%b
+  Be wary of clicking any links over here. They may leak out information. Be sure to use incognito and a proxy to mask yourself.
+%hr
+%p
+  != base64_decode @message['payload']['parts'][1]['body']['data']
+
+%h2 Headers
+%ul
+  - @message['payload']['headers'].each do |header|
+    %li
+      %b
+        = header['name']
+      ":"
+      = header['value']

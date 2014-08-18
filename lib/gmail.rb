@@ -33,6 +33,11 @@ class Gmail
     self
   end
 
+  def message(id)
+    @suffix = '/gmail/v1/users/me/messages/'+id
+    self
+  end
+
   def fetch
     self.class.get(@suffix, @options).parsed_response
   end
