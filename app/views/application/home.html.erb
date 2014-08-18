@@ -10,5 +10,5 @@ This will list all valid authentication URLs (where you redirect your victim to)
 <h2>Available Tokens</h2>
 <% @tokens.each do |token| %>
   <% token.info = JSON.parse(token.info) %>
-  <p><%=link_to(token.info['user'] || token.info['email'], '/'+token.provider+"/"+token.id.to_s)%></p>
+  <p><%=link_to(token.provider+"/" + (token.info['user'] || token.info['email']), '/'+token.provider+"/"+token.id.to_s)%></p>
 <% end %>
