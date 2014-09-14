@@ -1,3 +1,4 @@
+[![Gitter](https://badges.gitter.im/Join Chat.svg)](https://gitter.im/captn3m0/amon?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
 amon is a hacking tool for maintaining access to accounts using oauth tokens, instead of passwords. I described the general idea [here](https://github.com/captn3m0/ideas#user-content-hacking-via-oaauth-tokens). amon was made in a 8 hour hackathon at [SDSLabs](https://sdslabs.co/)
 
 [![Deploy](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy?template=https://github.com/captn3m0/amon)
