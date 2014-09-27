@@ -1,3 +1,5 @@
+#amon
+
 amon is a hacking tool for maintaining access to accounts using oauth tokens, instead of passwords. I described the general idea [here](https://github.com/captn3m0/ideas#user-content-hacking-via-oaauth-tokens). amon was made in a 8 hour hackathon at [SDSLabs](https://sdslabs.co/)
 
 [![Deploy](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy?template=https://github.com/captn3m0/amon)
